@@ -1,0 +1,12 @@
+@use '../../assets/scss/theme.scss' as *;
+@import url(./Components/Loader/Loader.scss); // c'est le loader]
+.header {
+    height: 100vh;
+    min-height: 100vh;
+    width: 100vw !important;
+    background-image: url(./img/header.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0;
+}

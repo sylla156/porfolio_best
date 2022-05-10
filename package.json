@@ -1,0 +1,31 @@
+{
+    "name": "best",
+    "version": "1.0.0",
+    "description": "creation de mon porfolio",
+    "main": "index.js",
+    "scripts": {
+        "test": "npm start ",
+        "start": "parcel --no-cache ./public/index.html",
+        "build": "parcel build public/index.html"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sylla156/best.git"
+    },
+    "author": "sylla ibrahim",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/sylla156/best/issues"
+    },
+    "homepage": "https://github.com/sylla156/best#readme",
+    "dependencies": {
+        "gsap": "^3.9.1",
+        "parcel-bundler": "^1.12.5",
+        "react": "^17.0.2",
+        "react-dom": "^17.0.2",
+        "scroll-snap": "^4.0.2"
+    },
+    "devDependencies": {
+        "sass": "^1.49.0"
+    }
+}

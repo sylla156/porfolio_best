@@ -1,0 +1,59 @@
+@use '../../../../assets/scss/theme.scss' as *;
+@use '../../../../assets/scss/mixin.scss' as *;
+.reseau {
+    position: absolute;
+    bottom: 10%;
+    right: 0;
+    z-index: 7;
+    &__nav {
+        height: max-content;
+        width: max-content;
+        margin: 10px;
+        color: $firstColor;
+        &>* {
+            transform: rotate(-90deg);
+            padding: 30px 20px;
+            font-style: italic;
+            font-weight: bolder;
+            border-bottom: 3px dotted $firstColor;
+            color: $firstColor;
+            border-radius: 50%;
+            transition: all 0.5s;
+            &:nth-child(1):hover {
+                color: #00AC2C;
+                border-color: #00AC2C;
+                border-bottom: 5px dotted $firstColor;
+            }
+            &:nth-child(2):hover {
+                color: #0e76a8;
+                border-color: #0e76a8;
+                border-bottom: 5px dotted $firstColor;
+            }
+            &:nth-child(3):hover {
+                color: $secondColor;
+                border-bottom: 5px dotted $firstColor;
+            }
+            &:nth-child(4):hover {
+                color: #1DA1F2;
+                border-color: #1DA1F2;
+                border-bottom: 5px dotted $firstColor;
+            }
+        }
+    }
+}
+
+@include mobile() {
+    .reseau {
+        &__nav {
+            &>* {
+                padding: 10px;
+                border-width: 2px;
+                width: 50px;
+                height: 50px;
+            }
+            &>*:hover {
+                border-width: 5px;
+            }
+        }
+    }
+}

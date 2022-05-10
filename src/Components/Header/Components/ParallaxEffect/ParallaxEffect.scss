@@ -1,0 +1,52 @@
+.parallax {
+    height: 88vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    z-index: 10;
+    pointer-events: none;
+    overflow: hidden;
+    &>div {
+        position: absolute;
+        img {
+            height: 50px;
+            width: 50px;
+            transform-style: preserve-3d;
+        }
+    }
+    &> :nth-child(1) {
+        top: 20%;
+        left: 60%;
+        filter: blur(2px);
+        animation: rotation 2s infinite linear;
+    }
+    &> :nth-child(2) {
+        top: 90%;
+        left: 20%;
+        animation: rotation 2s infinite linear;
+    }
+    &> :nth-child(3) {
+        bottom: 0;
+        right: 5%;
+        animation: rotation 2s infinite linear;
+    }
+    &> :nth-child(4) {
+        top: 10%;
+        left: 10%;
+        animation: rotation 2s infinite linear;
+        filter: blur(2px);
+        img {
+            height: 30px;
+            width: 30px;
+        }
+    }
+}
+
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(359deg);
+    }
+}

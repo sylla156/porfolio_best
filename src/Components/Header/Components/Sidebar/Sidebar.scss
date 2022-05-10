@@ -1,0 +1,210 @@
+@use "../../../../assets/scss/theme.scss" as *;
+@use "../../../../assets/scss/mixin.scss" as *;
+.sidebar {
+    height: 8vh;
+    min-width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 9;
+    &__title {
+        width: 30vw;
+        margin: 0 0 0 3em;
+        font-size: 2.5vw;
+    }
+    &__btn {
+        margin: 1em 3em 0 0;
+        &>p {
+            width: 3em;
+            height: 1px;
+            background-color: $firstColor;
+        }
+        &:hover {
+            &>p {
+                transition: transform 0.5s;
+            }
+            &> :nth-child(1) {
+                transform: rotate(122deg) translateX(1.1em);
+                width: 2.9em;
+            }
+            &> :nth-child(2) {
+                transform: rotate(-122deg) translate(-6px, 12px);
+                width: 2.9em;
+            }
+        }
+    }
+}
+
+.btn__enable {
+    &>p {
+        background-color: $backgroundColor;
+        transition: transform 0.5s;
+    }
+    &> :nth-child(1) {
+        transform: rotate(122deg) translateX(1.1em);
+        width: 2.9em;
+    }
+    &> :nth-child(2) {
+        transform: rotate(-122deg) translate(-6px, 12px);
+        width: 2.9em;
+    }
+}
+
+.btn__disable {
+    &>p {
+        background-color: $firstColor;
+        transition: transform 0.5s;
+    }
+    &> :nth-child(1) {
+        transform: rotate(0deg) translateX(0);
+        width: 2.9em;
+    }
+    &> :nth-child(2) {
+        transform: rotate(0deg) translate(0);
+        width: 2.9em;
+    }
+}
+
+.nav__disable {
+    position: absolute;
+    height: 1px;
+    width: 100vw;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: $firstColor;
+    z-index: 7;
+    transition: all 1s;
+    pointer-events: none;
+    a {
+        color: $backgroundColor !important;
+        text-decoration: none;
+    }
+    &>* {
+        opacity: 0;
+    }
+}
+
+.nav__enable {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: $firstColor;
+    z-index: 8;
+    transition: all 1s cubic-bezier(.56, .57, .03, .97);
+    padding-top: 12vh;
+    pointer-events: visible;
+    a {
+        color: $backgroundColor !important;
+        text-decoration: none;
+        cursor: none
+    }
+    &>* {
+        opacity: 1;
+    }
+}
+
+.nav {
+    color: $backgroundColor;
+    height: 70vh;
+    width: 65vw;
+    margin: 0 auto;
+    font-size: 6vw;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    p {
+        z-index: 10;
+        margin: 0px;
+        padding: 30px;
+        opacity: 0.4;
+        &:hover,
+        &:active {
+            opacity: 1;
+        }
+    }
+}
+
+.navImg {
+    position: fixed;
+    z-index: 9;
+    background-repeat: no-repeat;
+    height: 200px !important;
+    width: 300px !important;
+    transition: transform background-image opacity 0.5s ease-out;
+    pointer-events: none;
+    background-color: $firstColor;
+    top: 0;
+    background-size: contain;
+    margin: 0;
+    padding: 0%;
+    img {
+        height: 100%;
+        width: 100%;
+    }
+}
+
+.about {
+    background-image: url("./img/about.jpg");
+}
+
+.works {
+    background-image: url("./img/works.jpg");
+}
+
+.contact {
+    background-image: url("./img/contact.jpg");
+}
+
+.skills {
+    background-image: url('./img/skills.jpg');
+}
+
+@include mobile() {
+    .sidebar {
+        &__title {
+            width: 80vw;
+            margin: 0 0 0 0;
+            font-size: 1.8em;
+        }
+        &__btn {
+            margin: 1em 1em 0 0;
+            &>p {
+                width: 3em;
+                height: 1px;
+                background-color: $firstColor;
+            }
+        }
+    }
+    .nav {
+        height: 70vh;
+        width: 65vw;
+        margin: 0 auto;
+        font-size: 4rem;
+        text-transform: uppercase;
+        p {
+            margin: 0px;
+            padding: 30px;
+        }
+    }
+    .btn__enable {
+        &>p {
+            background-color: $backgroundColor;
+        }
+    }
+    .btn__disable {
+        &>p {
+            background-color: $firstColor;
+        }
+    }
+    .navImg {
+        height: 150px !important;
+        width: 150px !important;
+    }
+}

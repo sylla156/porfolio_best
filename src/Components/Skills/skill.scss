@@ -1,0 +1,126 @@
+@use '../../assets/scss/theme.scss' as *;
+@use '../../assets/scss/mixin.scss' as *;
+.skillsProject {
+    min-height: 100vh;
+    background-color: $skillsBackgroundColor;
+    color: $skillsColor;
+    &__title {
+        height: 20vh;
+        h1 {
+            font-style: italic;
+            font-size: 10vw;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 40px;
+            margin-bottom: 0;
+        }
+        p {
+            width: 30%;
+            text-align: justify;
+            text-transform: uppercase;
+            margin-left: 10vw;
+        }
+    }
+    &__content {
+        height: calc(60vh + 2.9px);
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        align-content: flex-start;
+        gap: 10vh 0;
+        padding-top: 10vh;
+        flex-wrap: wrap;
+        &--child {
+            width: 20%;
+            margin: 0 1.5%;
+            height: 30%;
+            background-color: $skillsColor;
+            color: $skillsBackgroundColor;
+            position: relative;
+            padding: 0 1%;
+            transition: all 0.5s cubic-bezier(.9, .05, .33, .61);
+            h3 {
+                text-transform: uppercase;
+                font-style: italic;
+                font-size: 2vw;
+                margin-bottom: 0;
+            }
+            p {
+                text-align: justify;
+                min-width: 60%;
+                text-transform: uppercase;
+                font-size: 0.7em;
+            }
+            p::after {
+                content: '';
+                position: absolute;
+                background-origin: 10%;
+                left: 5%;
+                bottom: 10%;
+                width: 10%;
+                height: 1px;
+                background-color: $skillsBackgroundColor;
+            }
+            &:hover {
+                color: $skillsColor;
+                background-color: $skillsBackgroundColor;
+            }
+            &:active {
+                color: $skillsColor;
+                background-color: $skillsBackgroundColor;
+            }
+        }
+    }
+}
+
+@include mobile() {
+    .skillsProject {
+        min-height: 135vh;
+        &__title {
+            h1 {
+                letter-spacing: 30px;
+            }
+            p {
+                width: 70%;
+                margin: 0 auto;
+            }
+        }
+        &__content {
+            align-content: space-between;
+            gap: 3vh 0;
+            padding-top: 0vh;
+            &--child {
+                width: 45%;
+                p {
+                    font-size: 1em;
+                }
+            }
+        }
+    }
+}
+
+@include tab() {
+    .skillsProject {
+        min-height: 135vh;
+        &__title {
+            h1 {
+                letter-spacing: 30px;
+            }
+            p {
+                width: 70%;
+                margin: 0 auto;
+            }
+        }
+        &__content {
+            align-content: space-between;
+            gap: 3vh 0;
+            padding-top: 0vh;
+            &--child {
+                width: 45%;
+                p {
+                    font-size: 1.5em;
+                }
+            }
+        }
+    }
+}
