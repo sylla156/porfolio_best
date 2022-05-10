@@ -1,0 +1,64 @@
+@use '../../assets/scss/theme.scss' as *;
+@use '../../assets/scss/mixin.scss' as *;
+.projects {
+    min-height: 100vh;
+    width: 100vw;
+    background-color: $backgroundProjet;
+    color: $colorProjet;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px dashed $colorProjet;
+    transition: all 0.5s;
+    position: relative;
+    &__title {
+        order: 2;
+        height: 100%;
+        width: 30%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px dashed $colorProjet;
+        h1 {
+            transform-origin: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: 7vh;
+            text-transform: uppercase;
+            span {
+                display: inline-block;
+                margin: 10px;
+            }
+        }
+    }
+    &__nav {
+        order: 1;
+        height: 100%;
+        width: 70%;
+        display: flex;
+        justify-content: center;
+        align-items: stretch;
+        flex-direction: column;
+        section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50%;
+            font-size: 6vw;
+            border: 1px dashed $colorProjet;
+            border-right: none;
+            p {
+                padding: 5vw 10vw;
+            }
+        }
+        &>section:first-child {
+            border-bottom: none;
+        }
+    }
+}
+
+.space {}
+
+.commerce {}
